@@ -1,0 +1,9 @@
+/project/target/*
+/target/*
+/import/*
+/export/*
+/make-jar/*.jar
+/make-jar/*.scala
+/make-jar/*.class
+
+.DS_Store

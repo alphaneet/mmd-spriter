@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cp ../*.scala .
+scalac *.scala
+jar cvfm AppletIn.jar applet.mf *.class
+java -Xms512m -Xmx512m -jar proguard.jar @applet.pro
+rm AppletIn.jar *.class *.scala

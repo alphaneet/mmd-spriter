@@ -1,0 +1,10 @@
+<config>
+  <imageMagickPath>/usr/local/bin/</imageMagickPath>
+  <importPath>import/</importPath>
+  <exportPath>export/</exportPath>  
+  
+  <importExt>bmp</importExt>  
+  <exportExt>png</exportExt>
+  
+  <exportSize>128</exportSize>  
+</config>

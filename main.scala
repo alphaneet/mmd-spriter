@@ -73,7 +73,7 @@ trait Config {
   
   val importPath = apply('importPath, "./")
   val exportPath = apply('exportPath, "export/")
-
+  
   val importExt  = apply('importExt, "bmp")
   val exportExt  = apply('exportExt, "png")
   
@@ -123,6 +123,7 @@ class Applet extends PApplet with Config {
 
   object Export extends Mode {
     val path = exportPath
+    
     val ext  = exportExt
     
     def title = "viewer"
@@ -132,7 +133,9 @@ class Applet extends PApplet with Config {
   
   object Import extends Mode {
     thismode =>
+      
     val path = importPath
+    
     val ext  = importExt
 
     def title = img map {
@@ -246,8 +249,8 @@ class Applet extends PApplet with Config {
 
               ("" /: List(red _, green _, blue _)) {
                 (s, f) =>
-                  val v = Integer.toHexString(f(c).toInt)
-                s + (if (v.size == 1.toInt) "0" + v else v)              
+                val v = Integer.toHexString(f(c).toInt)
+                s + (if (v.size == 1) "0" + v else v)              
               }
             }
 
@@ -372,6 +375,5 @@ class Applet extends PApplet with Config {
 }
 
 object Application extends Applet {
-  import javax.swing.JOptionPane
   def main(args: Array[String]) = runSketch()
 }

@@ -223,9 +223,9 @@ class Applet extends PApplet with Config {
         'l' -> ( 1,  0),
         'i' -> ( 0, -1) 
       ) foreach {
-        case (c, (x, y)) => if (isKey(c)) {
-          drag.ax += x
-          drag.ay += y
+        case (c, (x, y)) => if (isKey(c)) {          
+          drag.addRight(x)
+          drag.addBottom(y)
           redraw()
         }
       }      
@@ -291,6 +291,14 @@ class Applet extends PApplet with Config {
 
     def rect = new java.awt.Rectangle(x, y, width, height)
 
+    def addRight(v: Int) {
+      if (ax > bx) ax += v else bx += v      
+    }    
+    
+    def addBottom(v: Int) {
+      if (ay > by) ay += v else by += v      
+    }
+
     def move(x: Int, y: Int) {
       bx += x
       by += y
@@ -319,8 +327,10 @@ class Applet extends PApplet with Config {
       val w = i.width
       val h = i.height
       
-      frame.setSize(w, h)
       size(w, h)
+
+      val in = frame.getInsets
+      frame.setSize(w + in.left + in.right, h + in.top + in.bottom)
     
       Option(i)
     }

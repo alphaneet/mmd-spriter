@@ -1,3 +1,1 @@
-
-**Download
-http://www4.atpages.jp/~alphaneet/mmd-spriter/mmd-spriter.jar
+http://d.hatena.ne.jp/alpha_neet/20120313/1331624282

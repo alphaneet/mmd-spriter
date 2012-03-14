@@ -1,0 +1,1 @@
+http://d.hatena.ne.jp/alpha_neet/20120314/1331696484

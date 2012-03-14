@@ -1,9 +1,15 @@
-/project/target/*
-/target/*
-/import/*
-/export/*
-/make-jar/*.jar
-/make-jar/*.scala
-/make-jar/*.class
+project/target/*
+target/*
+import/*
+export/*
+
+make-jar/*.jar
+make-jar/*.scala
+make-jar/*.class
+
+sample/data/*
+sample/project/target/*
+sample/target/*
+sample/make-jar/*
 
 .DS_Store
